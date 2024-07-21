@@ -57,3 +57,25 @@ function playRound(){
 }
 
 console.log(playRound());
+
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+    for(let i = 0; i < 5; i++){
+        let result = playRound();
+        if (result == "human"){
+            humanScore++;
+            console.log("You win this round!");
+        } else if(result == "computer"){
+            computerScore++;
+            console.log("The computer wins this round!");
+        } else {
+            console.log("It's a draw!");
+        }
+    }
+    if (humanScore > computerScore){
+        console.log("You win the game");
+    } else{
+        console.log("The computer wins the game!");
+    }
+}
