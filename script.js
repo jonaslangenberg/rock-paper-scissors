@@ -124,6 +124,7 @@ paperBtn.addEventListener("click", () => {
         computerScore.textContent = "0";
         globalComputerScore = 0;
         globalPlayerScore = 0;
+        resultRound.textContent = "-"
         
     } else if (globalComputerScore === 5){
         alert("The computer won!");
@@ -131,6 +132,7 @@ paperBtn.addEventListener("click", () => {
         computerScore.textContent = "0";
         globalComputerScore = 0;
         globalPlayerScore = 0;
+        resultRound.textContent = "-"
         
     } else {
         let winner = playRound("paper");
@@ -159,6 +161,7 @@ rockBtn.addEventListener("click", () => {
         computerScore.textContent = "0";
         globalComputerScore = 0;
         globalPlayerScore = 0;
+        resultRound.textContent = "-"
         
     } else if (globalComputerScore === 5){
         alert("The computer won!");
@@ -166,6 +169,7 @@ rockBtn.addEventListener("click", () => {
         computerScore.textContent = "0";
         globalComputerScore = 0;
         globalPlayerScore = 0;
+        resultRound.textContent = "-"
         
     } else {
         let winner = playRound("rock");
