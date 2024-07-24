@@ -58,7 +58,7 @@ function playRound(humanChoice){
         console.log("Scissors beats Paper!");
         return "computer";
     }
-
+}
 
 
 const rockBtn = document.querySelector("#rock");
@@ -179,5 +179,3 @@ rockBtn.addEventListener("click", () => {
     }
       
 } );
-
-
