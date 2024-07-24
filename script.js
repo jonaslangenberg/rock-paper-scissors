@@ -77,6 +77,41 @@ let globalPlayerScore = 0;
 let globalComputerScore = 0;
 
 
+sciBtn.addEventListener("click", () => {
+    const playerScore = document.querySelector("#player-score");
+    const computerScore = document.querySelector("#computer-score");
+    const resultRound = document.querySelector("#round-result");
+    if (globalPlayerScore === 5){
+        alert("You won!");
+        playerScore.textContent = "0";
+        computerScore.textContent = "0";
+        globalComputerScore = 0;
+        globalPlayerScore = 0;
+        
+    } else if (globalComputerScore === 5){
+        alert("The computer won!");
+        playerScore.textContent = "0";
+        computerScore.textContent = "0";
+        globalComputerScore = 0;
+        globalPlayerScore = 0;
+        
+    } else {
+        let winner = playRound("scissors");
+    if (winner == "human"){
+        globalPlayerScore++;
+        playerScore.textContent = globalPlayerScore.toString();
+        resultRound.textContent = "You won this round!"
+    } else if(winner == "computer"){
+        globalComputerScore++;
+        computerScore.textContent = globalComputerScore.toString();
+        resultRound.textContent = "The computer won this round!"
+    } else {
+        resultRound.textContent = "It's a draw";
+    } 
+    }
+      
+} );
+
 paperBtn.addEventListener("click", () => {
     const playerScore = document.querySelector("#player-score");
     const computerScore = document.querySelector("#computer-score");
@@ -112,6 +147,40 @@ paperBtn.addEventListener("click", () => {
       
 } );
 
+rockBtn.addEventListener("click", () => {
+    const playerScore = document.querySelector("#player-score");
+    const computerScore = document.querySelector("#computer-score");
+    const resultRound = document.querySelector("#round-result");
+    if (globalPlayerScore === 5){
+        alert("You won!");
+        playerScore.textContent = "0";
+        computerScore.textContent = "0";
+        globalComputerScore = 0;
+        globalPlayerScore = 0;
+        
+    } else if (globalComputerScore === 5){
+        alert("The computer won!");
+        playerScore.textContent = "0";
+        computerScore.textContent = "0";
+        globalComputerScore = 0;
+        globalPlayerScore = 0;
+        
+    } else {
+        let winner = playRound("rock");
+    if (winner == "human"){
+        globalPlayerScore++;
+        playerScore.textContent = globalPlayerScore.toString();
+        resultRound.textContent = "You won this round!"
+    } else if(winner == "computer"){
+        globalComputerScore++;
+        computerScore.textContent = globalComputerScore.toString();
+        resultRound.textContent = "The computer won this round!"
+    } else {
+        resultRound.textContent = "It's a draw";
+    } 
+    }
+      
+} );
 
 
 
