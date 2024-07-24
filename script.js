@@ -27,14 +27,14 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice(){
-    return prompt("What do you choose? Rock, Paper or scissors?").toLowerCase()
+// function getHumanChoice(){
+//     return prompt("What do you choose? Rock, Paper or scissors?").toLowerCase()
     
-}
+// }
 
 
-function playRound(){
-    let humanChoice = getHumanChoice();
+function playRound(humanChoice){
+    // let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
     if (humanChoice == computerChoice){
         return "draw";
@@ -60,13 +60,61 @@ function playRound(){
     }
 }
 
-const playerScore = document.querySelector("#player-score");
-const computerScore = document.querySelector("#computer-score");
-const resultRound = document.querySelector("#round-result");
+
+// window.addEventListener("load", () => {
+//     const playerScoreWhenLoading = document.querySelector("#player-score");
+//     const computerScoreWhenLoading = document.querySelector("#computer-score");
+//     playerScoreWhenLoading.textContent = "0".toString();
+//     computerScoreWhenLoading.textContent = "0".toString();
+// });
+
 
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const sciBtn = document.querySelector("#scissors");
+
+let globalPlayerScore = 0;
+let globalComputerScore = 0;
+
+
+paperBtn.addEventListener("click", () => {
+    const playerScore = document.querySelector("#player-score");
+    const computerScore = document.querySelector("#computer-score");
+    const resultRound = document.querySelector("#round-result");
+    if (globalPlayerScore === 5){
+        alert("You won!");
+        playerScore.textContent = "0";
+        computerScore.textContent = "0";
+        globalComputerScore = 0;
+        globalPlayerScore = 0;
+        
+    } else if (globalComputerScore === 5){
+        alert("The computer won!");
+        playerScore.textContent = "0";
+        computerScore.textContent = "0";
+        globalComputerScore = 0;
+        globalPlayerScore = 0;
+        
+    } else {
+        let winner = playRound("paper");
+    if (winner == "human"){
+        globalPlayerScore++;
+        playerScore.textContent = globalPlayerScore.toString();
+        resultRound.textContent = "You won this round!"
+    } else if(winner == "computer"){
+        globalComputerScore++;
+        computerScore.textContent = globalComputerScore.toString();
+        resultRound.textContent = "The computer won this round!"
+    } else {
+        resultRound.textContent = "It's a draw";
+    } 
+    }
+      
+} );
+
+
+
+
 
 // function playGame(){
 //     let humanScore = 0;
