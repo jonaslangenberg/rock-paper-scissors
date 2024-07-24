@@ -87,6 +87,7 @@ sciBtn.addEventListener("click", () => {
         computerScore.textContent = "0";
         globalComputerScore = 0;
         globalPlayerScore = 0;
+        resultRound.textContent = "-"
         
     } else if (globalComputerScore === 5){
         alert("The computer won!");
@@ -94,6 +95,7 @@ sciBtn.addEventListener("click", () => {
         computerScore.textContent = "0";
         globalComputerScore = 0;
         globalPlayerScore = 0;
+        resultRound.textContent = "-"
         
     } else {
         let winner = playRound("scissors");
